@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="format.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="logo">
+        <svg viewBox="0 0 300 90" width="300" height="90" xmlns="http://www.w3.org/2000/svg">
+          <text x="5" y="75">Reham Ahmed Alamri</text>
+        </svg>
+      </div>
+    </div>
+    <div class="animation-overlay">
+      <div id="lottie-animation"></div>
+    </div>
+    <div class="hero-right">
+      <header class="navbar">
+        <nav class="nav-links">
+          <a href="index.html" data-text="Home">Home</a>
+          <a href="#skills" data-text="Skils">Skils</a>
+          <a href="#projects" data-text="Projects">Projects</a>
+          <a href="#contact" data-text="Contact">Contact</a>
+        </nav>
+      </header>
+      <div class="hero-content">
+        <p class="hello">👋 Hi, I'm reham</p>
+        <h1>
+          I like making <span class="outline-text">interactive things</span><br>
+          with code. I also<br>
+          <span class="outline-text">design & build</span><br>
+          experiences that feel<br>
+          simple, smooth & enjoyable.
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="skills-section" id="skills">
+    <h2 class="skills-title">Skills.</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-dots"><span></span><span></span><span></span></div>
+        <h3 class="card-title">🎨 Frontend Development</h3>
+        <ul>
+          <li>HTML5</li>
+          <li>CSS3 (Flexbox, Grid, Responsive Design)</li>
+          <li>JavaScript (ES6+)</li>
+          <li>DOM Manipulation</li>
+          <li>UI/UX Implementation</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-dots"><span></span><span></span><span></span></div>
+        <h3 class="card-title">🛠 Tools & Platforms</h3>
+        <ul>
+          <li>Git & GitHub</li>
+          <li>VS Code</li>
+          <li>Figma</li>
+          <li>Canva</li>
+          <li>Microsoft PowerPoint</li>
+          <li>Microsoft Excel</li>
+          <li>Microsoft Word</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-dots"><span></span><span></span><span></span></div>
+        <h3 class="card-title">✨ Other Skills</h3>
+        <ul>
+          <li>Communication</li>
+          <li>Time Management</li>
+          <li>Attention to Detail</li>
+          <li>Teamwork</li>
+          <li>Fast Learner</li>
+          <li>Problem Solving</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-wrap">
+      <a href="skills.html" class="visit-btn">visit my skills...</a>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="projects-section" id="projects">
+    <div class="projects-text">
+      <h2 class="projects-title">Projects..</h2>
+      <p>
+        These projects reflect my learning journey and passion for web development,
+        and I am continuously improving and expanding my skills.
+      </p>
+      <a href="project.html" class="projects-link">View my projects →</a>
+    </div>
+    <div class="projects-placeholder">
+      <div id="projects-animation"></div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="contact-text">
+        <h2 class="contact-title">Let's Work Together</h2>
+        <p>
+          I'm passionate about building modern and user-friendly web experiences.
+          If you're looking for a dedicated developer or want to collaborate,
+          don't hesitate to reach out.
+        </p>
+        <div class="contact-links">
+
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/reham-alamri" target="_blank" class="icon-btn">
+            <img src="Icon.SVG/linkedin-square-icon.svg" alt="LinkedIn" />
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com/rehamm333" target="_blank" class="icon-btn">
+            <img src="Icon.SVG/github.svg" alt="GitHub" />
+          </a>
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/966544695535?text=Hello%20Reham" target="_blank" class="icon-btn">
+            <img src="Icon.SVG/whatsapp-icon.svg" alt="WhatsApp" />
+          </a>
+
+          <!-- Email -->
+          <a href="mailto:reham788@outlook.com" class="icon-btn">
+            <img src="Icon.SVG/email-square-icon.svg" alt="Email" />
+          </a>
+
+        </div>
+      </div>
+      <div class="contact-animation">
+        <div id="contact-lottie"></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="interactiv.js"></script>
+</body>
+</html>

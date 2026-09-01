@@ -48,3 +48,27 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ===== HAMBURGER MENU (يظهر بس بالجوال حسب الـ CSS) =====
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const navLinks = document.getElementById('navLinks');
+
+if (hamburgerBtn && navLinks) {
+  hamburgerBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('nav-open');
+  });
+
+  // إقفال القائمة تلقائيًا بعد الضغط على أي رابط
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('nav-open');
+    });
+  });
+
+  // إقفال القائمة لو ضغطت بره منها
+  document.addEventListener('click', (e) => {
+    if (!hamburgerBtn.contains(e.target) && !navLinks.contains(e.target)) {
+      navLinks.classList.remove('nav-open');
+    }
+  });
+}

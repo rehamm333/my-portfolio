@@ -451,7 +451,6 @@ body {
 
 @media (max-width: 1100px) {
   .hero { flex-direction: column; overflow: visible; }
-  .hero::after { display: none; }
   .hero-left, .hero-right { width: 100%; }
   .hero-left { min-height: 45vh; align-items: center; }
   .hero-right { min-height: auto; padding: 30px; }
@@ -462,7 +461,6 @@ body {
   .hero-content h1 { font-size: 3.4rem; }
   .hello { font-size: 2rem; }
   .skills-section { overflow: visible; }
-  .skills-section::after { display: none; }
   .projects-section { flex-direction: column; padding: 60px 30px; gap: 40px; position: relative; }
   .projects-title { font-size: 3.5rem; }
   .projects-text, .projects-placeholder { max-width: 100%; }
@@ -492,4 +490,48 @@ body {
   #lottie-animation { width: 300px; height: 300px; }
   .hero-content h1 { font-size: 2.5rem; }
   .hello { font-size: 1.5rem; }
+}
+
+/* ================= MOBILE-ONLY ENHANCEMENTS ================= */
+/* كل هذا القسم يشتغل بس تحت 1100px، ما يأثر على شكل الديسكتوب أبدًا */
+@media (max-width: 1100px) {
+
+  /* عناصر تظهر بحركة ناعمة أثناء السكرول */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* استجابة لمس بدل الـ hover على البطاقات */
+  .card:active {
+    transform: translateY(-4px) scale(0.98);
+    box-shadow: 4px 4px 0px #2d2d2d;
+  }
+
+  /* استجابة لمس على الأزرار */
+  .visit-btn:active,
+  .cv-btn:active {
+    box-shadow: 1px 1px 0px #2d2d2d;
+    transform: translate(2px, 2px) scale(0.97);
+  }
+
+  /* استجابة لمس على أيقونات التواصل */
+  .icon-btn:active img {
+    transform: scale(1.15);
+    opacity: 0.85;
+  }
+
+  /* دخول ناعم لعنوان الهيرو عند فتح الصفحة */
+  .hero-content {
+    animation: heroFadeIn 0.9s ease both;
+  }
+  @keyframes heroFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
 }

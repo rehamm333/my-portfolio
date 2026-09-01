@@ -497,13 +497,8 @@ body {
   .logo svg { width: 150px; height: 48px; }
   .logo svg text { font-size: 20px; }
 
-  .animation-overlay {
-    position: relative;
-    left: auto; top: auto;
-    transform: none;
-    width: 100%;
-    margin-top: 10px;
-  }
+  /* مهم: .animation-overlay تظل absolute زي الديسكتوب بالضبط،
+     عشان تطفو فوق .hero-left بدل ما تصير عمود مستقل يكسر التخطيط */
   #lottie-animation { width: 110px; height: 110px; }
 
   .hero-content { padding-left: 0; margin: 10px 0 0; text-align: left; }

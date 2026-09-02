@@ -475,68 +475,38 @@ body {
   #lottie-animation { width: 500px; height: 500px; }
 }
 
-/* ===== الجوال والتابلت ===== */
+/* ===== الجوال والتابلت: عمودين جنب بعض زي اللاب توب ===== */
 @media (max-width: 1100px) {
 
-  /* ----- الهيرو: خلفية تيل موحدة، مكدّس عمودي، بدون قطع لوني حاد ----- */
-  .hero {
-    flex-direction: column;
-    min-height: auto;
-    background: var(--right-bg);
-    overflow: hidden;
-  }
+  .hero { flex-direction: row; min-height: auto; }
 
   .hero-left {
-    width: 100%;
+    width: 38%;
     min-height: auto;
-    background: transparent;
-    position: static;
-    padding: 24px 24px 0;
-    align-items: flex-start;
+    padding: 22px 16px;
+    align-items: center;
   }
-
-  /* شارة فاتحة صغيرة حوالين الاسم عشان يبان واضح فوق التيل */
-  .logo {
-    display: inline-block;
-    background: var(--left-bg);
-    padding: 8px 16px;
-    border-radius: 10px;
-    margin-bottom: 0;
-  }
-  .logo svg { width: 155px; height: 48px; }
-  .logo svg text { font-size: 20px; }
-
-  /* الرسمة تصير عنصر عادي بمنتصف الشاشة، مو عائمة */
-  .animation-overlay {
-    position: relative;
-    left: auto; top: auto;
-    transform: none;
-    width: 100%;
-    margin-top: 14px;
-    display: flex;
-    justify-content: center;
-  }
-  #lottie-animation { width: 190px; height: 190px; }
 
   .hero-right {
-    width: 100%;
+    width: 62%;
     min-height: auto;
-    background: transparent;
-    padding: 8px 24px 70px;
+    /* فراغ إضافي تحت عشان الموجة (::after ارتفاعها 50px) ما تغطي آخر سطر بالنص */
+    padding: 22px 24px 70px;
   }
 
-  .hero-content { padding-left: 0; margin: 18px 0 0; text-align: left; }
-  .hero-content h1 { font-size: 1.75rem; line-height: 1.4; }
-  .hello { font-size: 1.2rem; margin-bottom: 16px; }
+  .logo svg { width: 165px; height: 52px; }
+  .logo svg text { font-size: 22px; }
 
-  /* ===== النافبار: هامبرجر ثابت أعلى يمين القسم دايمًا ===== */
-  .navbar {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    z-index: 30;
-    justify-content: flex-end;
-  }
+  /* .animation-overlay تظل absolute زي الديسكتوب بالضبط،
+     عشان تطفو فوق .hero-left بدل ما تصير عمود مستقل يكسر التخطيط */
+  #lottie-animation { width: 125px; height: 125px; }
+
+  .hero-content { padding-left: 0; margin: 20px 0 0; text-align: left; }
+  .hero-content h1 { font-size: 1.65rem; line-height: 1.4; }
+  .hello { font-size: 1.15rem; margin-bottom: 16px; }
+
+  /* ===== النافبار يتحول لهمبرجر ===== */
+  .navbar { justify-content: flex-end; }
   .hamburger-btn { display: flex; }
 
   .nav-links {
@@ -564,19 +534,21 @@ body {
   }
   .nav-links a::before { font-size: 1rem; }
 
-  /* ----- تقليل ارتفاع قسم Skills وباقي الأقسام ----- */
+  /* ===== مسافة أوسع قبل ما يبدأ قسم Skills، وتصغير ارتفاعه العام ===== */
   .skills-section {
     overflow: visible;
     min-height: auto;
-    padding: 40px 24px 50px;
+    padding: 70px 24px 55px;
   }
-  .skills-title { font-size: 3rem; margin-bottom: 22px; }
+  .skills-title { margin-bottom: 30px; }
 
+  /* ملاحظة: ما فيه position: relative هنا -
+     خليناه يرث position: sticky من الإعداد الأصلي فوق بالملف
+     عشان يصير تأثير "ارتفاع" قسم Contact فوق Projects زي اللاب توب بالضبط */
   .projects-section {
     flex-direction: column;
     padding: 60px 30px;
     gap: 40px;
-    position: relative;
     min-height: auto;
   }
   .projects-title { font-size: 3.5rem; }
@@ -595,27 +567,23 @@ body {
 }
 
 @media (max-width: 768px) {
-  .skills-section { padding: 32px 20px 40px; }
-  .skills-title { font-size: 2.4rem; margin-bottom: 16px; }
-  .cards-grid { grid-template-columns: 1fr; gap: 14px; }
-
-  /* بطاقات أصغر وأكثر تراص عشان الصفحة ما تطول بزيادة */
-  .card-dots { padding: 10px 16px; }
-  .card-title { font-size: 1.2rem; margin: 16px 0 10px; padding: 0 18px; }
-  .card ul { padding: 0 18px 18px; gap: 6px; }
-  .card ul li { font-size: 0.9rem; line-height: 1.3; }
-
+  .skills-section { padding: 60px 24px 45px; }
+  .skills-title { font-size: 3.5rem; margin-bottom: 24px; }
+  .cards-grid { grid-template-columns: 1fr; gap: 18px; }
   .contact-section { padding: 20px; }
   .contact-inner { padding: 36px 24px; }
   .contact-title { font-size: 2.4rem; }
 }
 
 @media (max-width: 700px) {
-  .logo svg { width: 130px; height: 42px; }
+  .hero-left { width: 36%; padding: 18px 12px; }
+  .hero-right { width: 64%; padding: 18px 18px 60px; }
+  .logo svg { width: 130px; height: 44px; }
   .logo svg text { font-size: 18px; }
-  #lottie-animation { width: 150px; height: 150px; }
-  .hero-content h1 { font-size: 1.45rem; }
-  .hello { font-size: 1.05rem; }
+  #lottie-animation { width: 100px; height: 100px; }
+  .hero-content { margin-top: 16px; }
+  .hero-content h1 { font-size: 1.3rem; line-height: 1.4; }
+  .hello { font-size: 1rem; margin-bottom: 12px; }
 }
 
 /* ================= MOBILE-ONLY ENHANCEMENTS ================= */

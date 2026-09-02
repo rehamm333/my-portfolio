@@ -494,12 +494,13 @@ body {
     padding: 22px 24px 70px;
   }
 
-  .logo svg { width: 165px; height: 52px; }
-  .logo svg text { font-size: 22px; }
+  /* الاسم كبّرناه شوي */
+  .logo svg { width: 190px; height: 58px; }
+  .logo svg text { font-size: 26px; }
 
   /* .animation-overlay تظل absolute زي الديسكتوب بالضبط،
      عشان تطفو فوق .hero-left بدل ما تصير عمود مستقل يكسر التخطيط */
-  #lottie-animation { width: 125px; height: 125px; }
+  #lottie-animation { width: 150px; height: 150px; }
 
   .hero-content { padding-left: 0; margin: 20px 0 0; text-align: left; }
   .hero-content h1 { font-size: 1.65rem; line-height: 1.4; }
@@ -534,23 +535,23 @@ body {
   }
   .nav-links a::before { font-size: 1rem; }
 
-  /* ===== مسافة كبيرة قبل ما يبدأ قسم Skills ===== */
+  /* ===== مسافة معتدلة قبل ما يبدأ قسم Skills ===== */
   .skills-section {
     overflow: visible;
     min-height: auto;
-    padding: 160px 24px 55px;
+    padding: 90px 24px 55px;
   }
   .skills-title { margin-bottom: 30px; }
 
-  /* projects-section أقصر بالجوال عشان تأثير "ارتفاع" Contact فوقه يصير خفيف وبسيط،
-     مو يغطي القسم كامل لمدة طويلة أثناء السكرول */
   .projects-section {
     flex-direction: column;
     padding: 50px 30px;
     gap: 30px;
     min-height: 35vh;
   }
-  .projects-title { font-size: 3.5rem; }
+  /* مهم: نلغي top:-80px الموروثة من تصميم الديسكتوب، لأنها كانت تسحب
+     عنوان "Projects.." لفوق بشكل غريب بالجوال */
+  .projects-title { font-size: 3.5rem; top: 0; margin-top: 10px; }
   .projects-text, .projects-placeholder { max-width: 100%; }
   #projects-animation { height: 280px; }
 
@@ -566,8 +567,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  /* مسافة إضافية فوق قسم Skills لأن أغلب أجهزة الجوال تدخل بهالعرض بالضبط */
-  .skills-section { padding: 180px 24px 45px; }
+  .skills-section { padding: 90px 24px 45px; }
   .skills-title { font-size: 3.5rem; margin-bottom: 24px; }
   .cards-grid { grid-template-columns: 1fr; gap: 18px; }
   .contact-section { padding: 20px; }
@@ -579,9 +579,9 @@ body {
 @media (max-width: 700px) {
   .hero-left { width: 36%; padding: 18px 12px; }
   .hero-right { width: 64%; padding: 18px 18px 60px; }
-  .logo svg { width: 130px; height: 44px; }
-  .logo svg text { font-size: 18px; }
-  #lottie-animation { width: 100px; height: 100px; }
+  .logo svg { width: 150px; height: 50px; }
+  .logo svg text { font-size: 20px; }
+  #lottie-animation { width: 120px; height: 120px; }
   .hero-content { margin-top: 16px; }
   .hero-content h1 { font-size: 1.3rem; line-height: 1.4; }
   .hello { font-size: 1rem; margin-bottom: 12px; }

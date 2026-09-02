@@ -475,39 +475,68 @@ body {
   #lottie-animation { width: 500px; height: 500px; }
 }
 
-/* ===== الجوال والتابلت: نفس تخطيط اللاب توب (عمودين جنب بعض) بس بحجم مصغّر ===== */
+/* ===== الجوال والتابلت ===== */
 @media (max-width: 1100px) {
 
-  /* الهيرو يظل صف واحد (row) بدل ما يتكدس فوق بعض */
-  .hero { flex-direction: row; min-height: auto; }
+  /* ----- الهيرو: خلفية تيل موحدة، مكدّس عمودي، بدون قطع لوني حاد ----- */
+  .hero {
+    flex-direction: column;
+    min-height: auto;
+    background: var(--right-bg);
+    overflow: hidden;
+  }
 
   .hero-left {
-    width: 34%;
+    width: 100%;
     min-height: auto;
-    padding: 16px 10px;
-    align-items: center;
+    background: transparent;
+    position: static;
+    padding: 24px 24px 0;
+    align-items: flex-start;
   }
 
-  .hero-right {
-    width: 66%;
-    min-height: auto;
-    /* فراغ إضافي تحت عشان الموجة (::after ارتفاعها 50px) ما تغطي آخر سطر بالنص */
-    padding: 16px 20px 70px;
+  /* شارة فاتحة صغيرة حوالين الاسم عشان يبان واضح فوق التيل */
+  .logo {
+    display: inline-block;
+    background: var(--left-bg);
+    padding: 8px 16px;
+    border-radius: 10px;
+    margin-bottom: 0;
   }
-
-  .logo svg { width: 150px; height: 48px; }
+  .logo svg { width: 155px; height: 48px; }
   .logo svg text { font-size: 20px; }
 
-  /* مهم: .animation-overlay تظل absolute زي الديسكتوب بالضبط،
-     عشان تطفو فوق .hero-left بدل ما تصير عمود مستقل يكسر التخطيط */
-  #lottie-animation { width: 110px; height: 110px; }
+  /* الرسمة تصير عنصر عادي بمنتصف الشاشة، مو عائمة */
+  .animation-overlay {
+    position: relative;
+    left: auto; top: auto;
+    transform: none;
+    width: 100%;
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+  }
+  #lottie-animation { width: 190px; height: 190px; }
 
-  .hero-content { padding-left: 0; margin: 10px 0 0; text-align: left; }
-  .hero-content h1 { font-size: 1.4rem; line-height: 1.3; }
-  .hello { font-size: 1rem; margin-bottom: 10px; }
+  .hero-right {
+    width: 100%;
+    min-height: auto;
+    background: transparent;
+    padding: 8px 24px 70px;
+  }
 
-  /* ===== النافبار يتحول لهمبرجر ===== */
-  .navbar { justify-content: flex-end; }
+  .hero-content { padding-left: 0; margin: 18px 0 0; text-align: left; }
+  .hero-content h1 { font-size: 1.75rem; line-height: 1.4; }
+  .hello { font-size: 1.2rem; margin-bottom: 16px; }
+
+  /* ===== النافبار: هامبرجر ثابت أعلى يمين القسم دايمًا ===== */
+  .navbar {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 30;
+    justify-content: flex-end;
+  }
   .hamburger-btn { display: flex; }
 
   .nav-links {
@@ -535,13 +564,13 @@ body {
   }
   .nav-links a::before { font-size: 1rem; }
 
-  /* ===== تصغير الأقسام الطويلة عشان ما يصير فراغ فاضي كبير بالجوال ===== */
+  /* ----- تقليل ارتفاع قسم Skills وباقي الأقسام ----- */
   .skills-section {
     overflow: visible;
     min-height: auto;
-    padding: 50px 24px 60px;
+    padding: 40px 24px 50px;
   }
-  .skills-title { margin-bottom: 30px; }
+  .skills-title { font-size: 3rem; margin-bottom: 22px; }
 
   .projects-section {
     flex-direction: column;
@@ -566,20 +595,27 @@ body {
 }
 
 @media (max-width: 768px) {
-  .skills-section { padding: 40px 24px 50px; }
-  .skills-title { font-size: 3.5rem; margin-bottom: 24px; }
-  .cards-grid { grid-template-columns: 1fr; gap: 20px; }
+  .skills-section { padding: 32px 20px 40px; }
+  .skills-title { font-size: 2.4rem; margin-bottom: 16px; }
+  .cards-grid { grid-template-columns: 1fr; gap: 14px; }
+
+  /* بطاقات أصغر وأكثر تراص عشان الصفحة ما تطول بزيادة */
+  .card-dots { padding: 10px 16px; }
+  .card-title { font-size: 1.2rem; margin: 16px 0 10px; padding: 0 18px; }
+  .card ul { padding: 0 18px 18px; gap: 6px; }
+  .card ul li { font-size: 0.9rem; line-height: 1.3; }
+
   .contact-section { padding: 20px; }
   .contact-inner { padding: 36px 24px; }
   .contact-title { font-size: 2.4rem; }
 }
 
 @media (max-width: 700px) {
-  .logo svg { width: 110px; height: 38px; }
-  .logo svg text { font-size: 16px; }
-  #lottie-animation { width: 85px; height: 85px; }
-  .hero-content h1 { font-size: 1.15rem; }
-  .hello { font-size: 0.9rem; }
+  .logo svg { width: 130px; height: 42px; }
+  .logo svg text { font-size: 18px; }
+  #lottie-animation { width: 150px; height: 150px; }
+  .hero-content h1 { font-size: 1.45rem; }
+  .hello { font-size: 1.05rem; }
 }
 
 /* ================= MOBILE-ONLY ENHANCEMENTS ================= */

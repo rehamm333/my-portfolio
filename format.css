@@ -534,26 +534,25 @@ body {
   }
   .nav-links a::before { font-size: 1rem; }
 
-  /* ===== مسافة أوسع قبل ما يبدأ قسم Skills، وتصغير ارتفاعه العام ===== */
+  /* ===== مسافة كبيرة قبل ما يبدأ قسم Skills ===== */
   .skills-section {
     overflow: visible;
     min-height: auto;
-    padding: 90px 24px 55px;
+    padding: 160px 24px 55px;
   }
   .skills-title { margin-bottom: 30px; }
 
-  /* ملاحظة: ما فيه position: relative هنا -
-     خليناه يرث position: sticky من الإعداد الأصلي فوق بالملف
-     عشان يصير تأثير "ارتفاع" قسم Contact فوق Projects زي اللاب توب بالضبط */
+  /* projects-section أقصر بالجوال عشان تأثير "ارتفاع" Contact فوقه يصير خفيف وبسيط،
+     مو يغطي القسم كامل لمدة طويلة أثناء السكرول */
   .projects-section {
     flex-direction: column;
-    padding: 60px 30px;
-    gap: 40px;
-    min-height: auto;
+    padding: 50px 30px;
+    gap: 30px;
+    min-height: 35vh;
   }
   .projects-title { font-size: 3.5rem; }
   .projects-text, .projects-placeholder { max-width: 100%; }
-  #projects-animation { height: 340px; }
+  #projects-animation { height: 280px; }
 
   .contact-inner {
     flex-direction: column;
@@ -567,13 +566,14 @@ body {
 }
 
 @media (max-width: 768px) {
-  /* زودنا المسافة فوق أكثر هنا لأن أغلب أجهزة الجوال تدخل بهالعرض بالضبط */
-  .skills-section { padding: 100px 24px 45px; }
+  /* مسافة إضافية فوق قسم Skills لأن أغلب أجهزة الجوال تدخل بهالعرض بالضبط */
+  .skills-section { padding: 180px 24px 45px; }
   .skills-title { font-size: 3.5rem; margin-bottom: 24px; }
   .cards-grid { grid-template-columns: 1fr; gap: 18px; }
   .contact-section { padding: 20px; }
   .contact-inner { padding: 36px 24px; }
   .contact-title { font-size: 2.4rem; }
+  .projects-section { min-height: 30vh; }
 }
 
 @media (max-width: 700px) {
